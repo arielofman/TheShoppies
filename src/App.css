@@ -346,6 +346,14 @@ h3 {
     flex: 1;
   }   
 
+  .notifications.card {
+    margin-top: 1em;
+    margin-left: var(--small-margin);
+    margin-right: var(--small-margin);
+    padding: 2em;
+    font-size: 0.7em;
+  }
+
   .main { 
     margin-left: var(--small-margin);
     margin-right: var(--small-margin);
@@ -353,12 +361,12 @@ h3 {
   }
 
   .card { 
-    margin: 0 0 1rem 0; 
+    margin: 0 0 0 0; 
   } 
+
   .head-container { 
     padding: 1.5em;
-  }
-
+  } 
   .desc {
     font-size: 0.75em;
   }
@@ -428,11 +436,18 @@ h3 {
       font-size: 0.8em;
     }
 
+    .notifications.card {
+      margin-top: 1em;
+      margin-left: var(--small-margin);
+      margin-right: var(--small-margin);
+    } 
+
     .main { 
       margin-left: var(--small-margin);
       margin-right: var(--small-margin);
       gap: 1em;
     }
+    
     .card { 
       margin: 0 0 1rem 0; 
     } 
@@ -445,6 +460,10 @@ h3 {
 
   .img-container > img {   
     width: 10em; 
+  }  
+
+  .notifications.card {
+    margin-top: 2em; 
   }
 
   .main {
