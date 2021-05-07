@@ -493,7 +493,7 @@ h3 {
   .main { 
     margin-left: var(--large-margin);
     margin-right: var(--large-margin);
-    gap: 3em;
+    gap: 2em;
   }
 
   .img-container > img {   

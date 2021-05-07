@@ -5,6 +5,8 @@ import axios from 'axios'
 export const MoviesContext = createContext()
 
 export const MoviesContextProvider = (props) => {
+    const maxNumNominations = 5;
+
     const [results, setResults] = useState([]);
     const [nominations, setNominations] = useState([]);
 
@@ -87,6 +89,10 @@ export const MoviesContextProvider = (props) => {
         const numNoms = localStorage.getItem('numNominations');
         if(numNoms) {
             setnumOfNominations(parseInt(numNoms));
+
+            if(numNoms >= maxNumNominations) {
+                maxNomsFlag.current = true;
+            }
         }
 
     }, [])
@@ -113,7 +119,7 @@ export const MoviesContextProvider = (props) => {
 
     const addNomination = (id) => {
         if (maxNomsFlag.current === true) {
-            addToast('You already have 5 nominations!', {
+            addToast(`You already have ${maxNumNominations} nominations!`, {
                 appearance: 'info',
                 autoDismiss: true,
             });
@@ -124,8 +130,8 @@ export const MoviesContextProvider = (props) => {
             setNominateBtnDisabled(id, true);
             setnumOfNominations(prevState => prevState + 1); 
 
-            if (newArray.length >= 5) {
-                addToast('Awesome! You nominated 5 movies.', {
+            if (newArray.length >= maxNumNominations) {
+                addToast(`Awesome! You nominated ${maxNumNominations} movies.`, {
                     appearance: 'success',
                     autoDismiss: true,
                 });
