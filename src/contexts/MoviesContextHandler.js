@@ -34,7 +34,7 @@ export const MoviesContextProvider = (props) => {
                 for (let i = 0; i < result.data.Search.length; i++) {
                     const movieID = result.data.Search[i].imdbID;
 
-                    const moreInfo = await axios(`http://www.omdbapi.com/?i=${movieID}&apikey=${REACT_APP_OMDB_API_KEY}`);
+                    const moreInfo = await axios(`https://www.omdbapi.com/?i=${movieID}&apikey=${REACT_APP_OMDB_API_KEY}`);
                     
                     // shorten the string
                     const maxLength = 50;
