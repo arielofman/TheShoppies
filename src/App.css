@@ -110,6 +110,10 @@ header {
   background-color: #ad0a0a;
 }
 
+.remove-btn:active {
+  background-color: #750808;
+}
+
 .noms-label {
   text-align: center;
 }
@@ -154,12 +158,16 @@ header {
 
 .main {
   display: flex;
-  flex-direction: column;
-  grid-gap: var(--small-margin);
-  gap: var(--small-margin);
+  flex-direction: column; 
+  /* gap: var(--small-margin); not supported on most safari browsers */
   margin-top: 1em;
   margin-left: var(--small-margin);
   margin-right: var(--small-margin);
+}
+
+/* safari browser workaround */
+.main > * + * {
+  margin-top: 1rem;
 }
 
 .card {
@@ -214,17 +222,13 @@ header {
 
 .genre-container {
   display: flex;
-  flex-direction: row;
-  grid-gap: 0.5em;
-  gap: 0.5em;
-  width: 100%;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  -webkit-justify-content: center;
-  justify-content: center;
-  -webkit-flex-wrap: wrap;
+  flex-direction: row; 
+  /* gap: 0.5em; no support for most safari browsers */
+  width: 100%; 
+  padding-bottom: 10px; 
+  justify-content: center; 
   flex-wrap: wrap;
-}
+} 
 
 .genre {
   font-size: 0.55em;
@@ -233,7 +237,9 @@ header {
   padding: 10px;
   padding-top: 0.4em;
   padding-bottom: 0.35em;
-  border-radius: 20px;
+  border-radius: 20px; 
+  margin-top: 0.5rem;
+  margin-right: 0.5rem; 
 }
 
 .spinner-img {
@@ -268,6 +274,10 @@ header {
 
 .nominate-btn:hover {
   background-color: rgb(20, 139, 84);
+}
+
+.nominate-btn:active {
+  background-color: rgb(13, 88, 53);
 }
 
 h3 {
@@ -341,7 +351,7 @@ h3 {
   width: 100%;
   border: 0;
   background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(177, 177, 177, 0.75), rgba(0, 0, 0, 0));
-}
+} 
 
 @media only screen and (max-width: 576px) {
   .img-container {
@@ -360,8 +370,7 @@ h3 {
     text-align: left;
     padding: 1.5em;
   }
-  .genre-container {
-    -webkit-justify-content: flex-start;
+  .genre-container { 
     justify-content: flex-start;
   }
   .entry-data {
@@ -414,6 +423,11 @@ h3 {
   .main {
     flex-direction: row;
   }
+  /* safari browser workaround */
+  .main > * + * {
+    margin-top: 0;
+    margin-left: 1rem;
+  }
   .head-container {
     font-size: 25px;
   }
@@ -446,11 +460,10 @@ h3 {
     background-image: url('./images/watching2.png');
     background-position: top right;
     background-repeat: no-repeat;
-  }
-  .main {
-    grid-gap: 2rem;
-    gap: 2rem;
-  }
+  } 
+  .main > * + * { 
+    margin-left: 1.5rem;
+  } 
   header {
     font-size: 1.792em;
   }
