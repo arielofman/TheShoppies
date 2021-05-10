@@ -15,6 +15,7 @@ function Nomination({ result, removeNomination }) {
                 </div>
                 <div className="about">{result.Plot === "N/A" ? "There is currently no information on the plot of this movie." : result.Plot}</div>
                 <button onClick={() => removeNomination(result.imdbID)} className="remove-btn">Remove <i className="far fa-trash-alt"></i></button>
+                <div className="thin-line"/>
            </div> 
         </div>
     )

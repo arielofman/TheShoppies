@@ -15,6 +15,7 @@ function MovieSearchResult({result, addNomination }) {
                 </div>
                 <div className="about">{result.Plot === "N/A" ? "There is currently no information on the plot of this movie." : result.Plot}</div>
                 <button disabled={result.disabled} onClick={() => addNomination(result.imdbID)} className="nominate-btn">Nominate <i className="fas fa-trophy"></i></button>
+                <div className="thin-line"/>
             </div>
         </div> 
     )
