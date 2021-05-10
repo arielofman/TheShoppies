@@ -288,7 +288,7 @@ h3 {
   margin-top: 1rem;
   margin-left: var(--small-margin);
   margin-right: var(--small-margin);
-  padding: 1.3rem;
+  padding: 0.5rem;
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
 }
@@ -297,7 +297,8 @@ h3 {
   min-height: 0;
   background-color: #32af2d;
   box-shadow: rgba(50, 50, 105, 0.15) 0px 2px 5px 0px, rgba(0, 0, 0, 0.05) 0px 1px 1px 0px;
-  font-size: 0.65rem;
+  text-align: center;
+  font-size: 0.7rem;
 }
 
 .max-nominations {
