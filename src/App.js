@@ -23,7 +23,7 @@ function App() {
               <Nominations />
             </div>
             <div className="footer">
-              <div id="footer-label">Developed by <a id="footer-link" href="https://github.com/ericofman"><span id="credits">Ariel Ofman</span></a></div>
+              <div id="footer-label">Developed by <a id="footer-link" href="https://github.com/arielofman"><span id="credits">Ariel Ofman</span></a></div>
             </div>
           </div>
         </div>
