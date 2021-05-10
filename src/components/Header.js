@@ -7,7 +7,7 @@ function Header() {
 
     return (
         <div className="head-container">
-            <header>Welcome to the <span className="shopify">Shoppies! 🏆</span> 
+            <header>Welcome to the <span className="shopify">Shoppies! {isSmallScreen && "🏆"}</span> 
             </header>
             <div className="subheading">The annual Shopify movie award show</div>
             <div className="desc">
