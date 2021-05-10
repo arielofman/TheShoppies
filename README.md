@@ -1,5 +1,5 @@
 # The Shoppies
-The Shopify 2021 Front-end Challenge \
+The Shopify 2021 Frontend Challenge \
 By: Ariel Ofman
 
 # Live Demo link!
