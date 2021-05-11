@@ -1,6 +1,7 @@
 import React from 'react'
 import Genre from './Genre'
 import {v4 as uuid} from 'uuid'
+import { motion } from "framer-motion"
 
 function Nomination({ result, removeNomination }) { 
     return (
@@ -14,7 +15,7 @@ function Nomination({ result, removeNomination }) {
                     )}
                 </div>
                 <div className="about">{result.Plot === "N/A" ? "There is currently no information on the plot of this movie." : result.Plot}</div>
-                <button onClick={() => removeNomination(result.imdbID)} className="remove-btn">Remove <i className="far fa-trash-alt"></i></button>
+                <motion.button whileTap={{ scale: 0.9 }} onClick={() => removeNomination(result.imdbID)} className="remove-btn">Remove <i className="far fa-trash-alt"></i></motion.button>
                 <div className="thin-line"/>
            </div> 
         </div>

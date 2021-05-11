@@ -10,6 +10,8 @@ import MoviesContextProvider from './contexts/MoviesContextHandler';
 
 import { ToastProvider } from 'react-toast-notifications';
 
+import { motion } from "framer-motion"
+
 function App() {
   return (
     <ToastProvider placement="bottom-center" autoDismissTimeout={2000}>
@@ -18,10 +20,12 @@ function App() {
           <div className="wrapper">
             <Header />
             <Notification />
-            <div className="main">
+            <motion.div initial={{ opacity: 0 }}
+                            animate={{ opacity: 1, transition: { duration: 0.5 } }}
+                             className="main">
               <SearchResults />
               <Nominations />
-            </div>
+            </motion.div>
             <div className="footer">
               <div id="footer-label">Developed by <a id="footer-link" href="https://github.com/arielofman"><span id="credits">Ariel Ofman</span></a></div>
             </div>

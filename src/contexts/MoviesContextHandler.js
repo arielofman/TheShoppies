@@ -1,5 +1,7 @@
 import React, { createContext, useState, useEffect, useRef } from 'react'
 import { useToasts } from 'react-toast-notifications';
+import { animateScroll } from 'react-scroll';
+
 import axios from 'axios'
 
 export const MoviesContext = createContext()
@@ -20,6 +22,7 @@ export const MoviesContextProvider = (props) => {
     const maxNomsFlag = useRef(false);
 
     const { addToast } = useToasts();
+    let scroll = animateScroll;
 
     const {REACT_APP_OMDB_API_KEY} = process.env;
 
@@ -137,7 +140,7 @@ export const MoviesContextProvider = (props) => {
                     autoDismiss: true,
                 });
                 maxNomsFlag.current = true;
-                window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+                scroll.scrollToTop();
             } else {
                 addToast('Added nomination', {
                     appearance: 'info',

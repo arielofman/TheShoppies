@@ -1,6 +1,7 @@
 import React from 'react'
 import Genre from './Genre'
 import {v4 as uuid} from 'uuid'
+import { motion } from "framer-motion"
 
 function MovieSearchResult({result, addNomination }) {
     return (
@@ -14,7 +15,7 @@ function MovieSearchResult({result, addNomination }) {
                     )}
                 </div>
                 <div className="about">{result.Plot === "N/A" ? "There is currently no information on the plot of this movie." : result.Plot}</div>
-                <button disabled={result.disabled} onClick={() => addNomination(result.imdbID)} className="nominate-btn">Nominate <i className="fas fa-trophy"></i></button>
+                <motion.button whileTap={{ scale: 0.9 }} disabled={result.disabled} onClick={() => addNomination(result.imdbID)} className="nominate-btn">Nominate <i className="fas fa-trophy"></i></motion.button>
                 <div className="thin-line"/>
             </div>
         </div> 
