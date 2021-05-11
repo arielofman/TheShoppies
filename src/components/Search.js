@@ -6,7 +6,7 @@ function Search() {
 
     const onChangeHandler = async (val) => {
         setResults([]); 
-        setSearchText(val.trim()); 
+        setSearchText(val); 
     }
 
     return (

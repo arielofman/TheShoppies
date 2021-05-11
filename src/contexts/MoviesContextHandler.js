@@ -4,8 +4,9 @@ import axios from 'axios'
 
 export const MoviesContext = createContext()
 
+export const maxNumNominations = 5;
+
 export const MoviesContextProvider = (props) => {
-    const maxNumNominations = 5;
 
     const [results, setResults] = useState([]);
     const [nominations, setNominations] = useState([]);
